@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script defer src="lista_compra.js"></script>
+    <title>Lista de la compra</title>
+</head>
+<body>
+    <h1>Lista de la compra</h1>
+    <form onsubmit="addElement(event)">
+        <label for="product">Producto: </label>
+        <input type="text" id="product"/>
+        <input type="submit" />
+    </form>
+    <ul id="lista_compra">
+    </ul>
+</body>
+</html>

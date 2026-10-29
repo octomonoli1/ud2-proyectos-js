@@ -101,11 +101,56 @@ for (let i = 0 ; i < 5 ; i++){
     edades[i] = parseInt(window.prompt(`Introduce la edad ${i}`));
 }
 
+
 let media = 0;
-for(edad of edades){
+//Recorrer array alrevés (Usando copia).
+for(edad of [...edades].reverse()){
     media += edad;
 }
 
 console.log("La edad máxima es " + Math.max(...edades));
 console.log("La edad mínima es " + Math.min(...edades));
 console.log("La edad media es " + media / edades.length);
+
+//Ejercicio 3
+const edades_compa = [18,19,20,20,20,19,18,20,17,35, 16, 41, 56, 19, 20];
+
+let media_compa = 0;
+let num_edades = 0;
+for(edad of edades_compa){
+    if(edad >18 && edad < 50){
+        media_compa += edad;
+        num_edades++;
+    }
+}
+
+console.log("La edad media es : " + Math.floor(media_compa / num_edades) );
+
+
+//Ejercicio 4: Eliminar el color verde de un array que almacena cinco colores cualesquiera, entre 
+//ellos debe estar el verde. 
+
+//OPC 1
+const colores = ["azul", "rojo", "amarillo","verde","rosa","negro","blanco"];
+
+for(let i = 0 ; i < colores.length ; i++){
+    if(colores[i] === "verde"){
+        colores.splice(i,1);
+    }
+}
+
+//OPC 2
+colores.splice(colores.indexOf("verde"), 1);
+console.table(colores);
+
+//Supon un array ordenado alfabéticamente de frutas. (Aguacate, Banana, Chirimoya, 
+//Dátil, Fresa, Guayaba, Kiwi, Limón, Naranja, Pera, Sandía, Uva, Yuca). Introduce el 
+//melón de forma que el orden se mantenga usando splice. 
+const frutas = ["Aguacate", "Banana", "Chirimoya", "Dátil", "Fresa", "Guayaba", "Kiwi", "Limón", "Naranja", "Pera", "Sandía", "Uva", "Yuca"];
+frutas.splice(frutas.indexOf("Naranja"), 0, "Melón");
+
+frutas.push("Melocotón");
+frutas.sort();
+
+console.table(frutas);
+
