@@ -21,4 +21,15 @@ do{
 
 console.table(teatro);
 
-const sala = document.
+const sala = document.getElementById("sala"); //Obtiene la sala
+
+for(let filas of teatro){
+    for(let butaca of filas){
+        const cuadro_asiento = document.createElement("div");
+        cuadro_asiento.classList.add("butaca");
+        if(butaca === 1){
+            cuadro_asiento.classList.add("ocupada");
+        }
+        sala.appendChild(cuadro_asiento);
+    }
+}
