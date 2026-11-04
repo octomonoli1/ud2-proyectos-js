@@ -23,13 +23,20 @@ console.table(teatro);
 
 const sala = document.getElementById("sala"); //Obtiene la sala
 
-for(let filas of teatro){
-    for(let butaca of filas){
+for(let i = 0 ; i < N_FILAS ; i++){
+    for(let j = 0 ; j < N_COLS ; j++){
         const cuadro_asiento = document.createElement("div");
         cuadro_asiento.classList.add("butaca");
-        if(butaca === 1){
+        if(teatro[i][j] === 1){
             cuadro_asiento.classList.add("ocupada");
         }
         sala.appendChild(cuadro_asiento);
     }
+}
+
+function reserva_mano(){
+    let fila = window.prompt("Introduce la fila");
+    let columna = window.prompt("Introduce la columna");
+
+    teatro[fila][columna] == 1;
 }
