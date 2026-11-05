@@ -1,0 +1,24 @@
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    gap: 5px;
+}
+
+.hueco {
+    width: 30px;
+    height: 30px;
+    background-color: darkgray;
+    border: 1px solid black;
+}
+
+.agua {
+    background-color: aqua;
+}
+
+.hundido {
+    background-color: red;
+}
+
+.elegido{
+    border: 2px solid green;
+}
