@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de clase</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Fecha nacimiento</th>
+                <th>Localidad</th>
+                <th>Sexo</th>
+                <th>Nota media</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo">
+            <!-- Aqui van todos los alumos-->
+        </tbody>
+    </table>
+
+    <button onclick="imprimir_alumnos()">Pintar alumnos por consola</button>
+    <button onclick="imprimir_aprobados()">Pintar alumnos aprobados</button>
+    <button onclick="calcula_nota_media()">Pintar nota media</button>
+    <button onclick="muestra_mejor_expediente()">Mejor expediente</button>
+    <button onclick="mostrar_iniciales()">Mostrar iniciales</button>
+
+</body>
+</html>
