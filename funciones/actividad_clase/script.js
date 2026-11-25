@@ -44,20 +44,31 @@ const a18 = new Alumno("Nuria", "Reyes Aguilar", "28-07-2001", "San Juan de Azna
 const a19 = new Alumno("Daniel", "Morales Cruz", "16-05-2004", "Tomares", "Hombre", 7.9);
 const a20 = new Alumno("Irene", "Herrera Domínguez", "22-03-2002", "Gelves", "Mujer", 8.7);
 
-const alumnos = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20];
+let alumnos = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20];
 
-const cuerpo = document.getElementById("cuerpo");
+function imprimir_tabla(alumnos){
+    const cuerpo = document.getElementById("cuerpo");
 
-alumnos.forEach(alumno =>  {
-    const tr = document.createElement("tr");
-    cuerpo.appendChild(tr);
+    vaciar_tabla();
 
-    Object.values(alumno).forEach(dato =>  {
-        const td = document.createElement("td");
-        td.textContent = dato;
-        tr.appendChild(td);
-    }); 
-});
+    alumnos.forEach(alumno =>  {
+        const tr = document.createElement("tr");
+        cuerpo.appendChild(tr);
+
+        Object.values(alumno).forEach(dato =>  {
+            const td = document.createElement("td");
+            td.textContent = dato;
+            tr.appendChild(td);
+        }); 
+    });
+}
+
+imprimir_tabla(alumnos);
+
+function vaciar_tabla(){
+    const cuerpo = document.getElementById("cuerpo");
+    cuerpo.textContent = "";
+}
 
 function imprimir_alumnos(){
     alumnos.forEach(alumno => console.log(alumno.toString()));
@@ -96,6 +107,40 @@ function mostrar_iniciales(){
 
     //Opción B
     alumnos.forEach(alumno => console.log(alumno.getIniciales()));
+}
+
+
+function buscar_localidad(){
+    //Solicita localidad
+    let localidad = window.prompt("Introduce una localidad");
+
+    if(localidad){
+        localidad = localidad.trim().toUpperCase();
+
+         //Busca las coincidencias dentro del array alumnos de dicha localidad
+        imprimir_tabla(alumnos.filter((alumno)=> alumno.localidad.toUpperCase().trim() === localidad));
+    }
+}
+
+function resetear_tabla(){
+    imprimir_tabla(alumnos);
+}
+
+function add_alumno(){
+    let nombre = window.prompt("Introduce el nombre");
+    let apellidos = window.prompt("Introduce los apellidos");
+    let localidad = window.prompt("Introduce la localidad");
+    let fecha_nac = window.prompt("Introduce la fecha de nacimiento");
+    let sexo = window.prompt("Introduce el sexo");
+    let nota_media = parseFloat(window.prompt("Introduce la nota media"));
+
+    if(nombre && apellidos && localidad && fecha_nac && sexo && nota_media){
+        const nuevo_alumno = new Alumno(nombre.trim(), apellidos.trim(), 
+            fecha_nac.trim(), localidad.trim(), sexo.trim(), nota_media);
+        alumnos.push(nuevo_alumno);
+
+        imprimir_tabla(alumnos);
+    }
 }
 
 /*for(let alumno of alumnos){
