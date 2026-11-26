@@ -45,14 +45,14 @@ function imprimir_tabla(coches){
 function buscar_coche(coches){
     const marca = document.getElementById("input-busqueda").value;
     const filtro = coches.filter(coche => coche.marca.trim().toUpperCase().includes(marca.toUpperCase()));
+    imprimir_tabla(filtro);
     if(filtro.length == 0){
         const cuerpo_tabla = document.getElementById("cuerpo-tabla-coches");
         const span = document.createElement("span");
+        span.classList.add("mensaje-vacio");
         span.textContent = "No hay datos";
         cuerpo_tabla.appendChild(span);
-
     }
-    imprimir_tabla(filtro);
 }
 
 function vaciar_tabla(){
