@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionario de coches</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="lib.js" defer></script>
+    <script src="coche.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>Concesionario de coches</h1>
+    
+    <section class="panel-controles">
+        <div class="busqueda">
+            <input type="text" id="input-busqueda" placeholder="Buscar por marca o modelo...">
+            <button onclick="buscar_coche(coches)" id="btn-buscar">Buscar</button>
+        </div>
+
+        <div class="acciones">
+            <button onclick="coche_caro(coches)" id="btn-mayor">Coche más caro</button>
+            <button onclick="coche_barato(coches)" id="btn-menor">Coche más barato</button>
+            <button id="btn-total">Precio medio</button>
+        </div>
+
+        <div class="acciones">
+            <button id="btn-anadir" class="btn-principal">+ Añadir coche</button>
+            <button id="btn-eliminar" class="btn-peligro">Eliminar coche</button>
+            <button onclick="imprimir_tabla(coches)" id="btn-mostrar-todos" class="btn-secundario">Limpiar filtros</button>
+        </div>
+    </section>
+
+    <table id="tabla-coches">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Cilindrada</th>
+                <th>Potencia (CV)</th>
+                <th>Matricula</th>
+                <th>Precio (€)</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpo-tabla-coches">
+            <!-- Los coches se insertarán dinámicamente aquí -->
+        </tbody>
+    </table>
+
+</body>
+</html>

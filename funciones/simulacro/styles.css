@@ -1,0 +1,185 @@
+
+/* ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f3f5f8;
+    color: #252b35;
+    padding: 40px;
+}
+
+/* CABECERA */
+h1 {
+    color: #1c2738;
+    font-size: 28px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2471a3;
+}
+
+/* CONTENEDOR DE LA TABLA */
+#tabla-coches {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* CABECERA DE LA TABLA */
+#tabla-coches thead {
+    background-color: #1c2738;
+    color: white;
+}
+
+#tabla-coches th {
+    padding: 16px 14px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* FILAS */
+#tabla-coches td {
+    padding: 14px;
+    border-bottom: 1px solid #e8ebef;
+    font-size: 14px;
+}
+
+/* FILAS ALTERNAS */
+#tabla-coches tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* EFECTO AL PASAR EL RATÓN */
+#tabla-coches tbody tr:hover {
+    background-color: #eaf3fa;
+}
+
+/* ÚLTIMA FILA */
+#tabla-coches tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    #tabla-coches {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+}
+
+
+
+/* PANEL DE CONTROLES */
+.panel-controles {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* BÚSQUEDA Y ACCIONES */
+.busqueda,
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* INPUT */
+.busqueda input {
+    flex: 1;
+    min-width: 200px;
+    padding: 11px 14px;
+    border: 1px solid #d5dbe3;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.busqueda input:focus {
+    border-color: #2471a3;
+}
+
+/* BOTONES */
+.panel-controles button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2471a3;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.panel-controles button:hover {
+    background-color: #1c5277;
+}
+
+/* BOTÓN SECUNDARIO */
+.panel-controles .btn-secundario {
+    background-color: #e9edf2;
+    color: #303b4a;
+}
+
+.panel-controles .btn-secundario:hover {
+    background-color: #d8dee7;
+}
+
+/* BOTÓN PRINCIPAL */
+.panel-controles .btn-principal {
+    background-color: #218c65;
+}
+
+.panel-controles .btn-principal:hover {
+    background-color: #176d4d;
+}
+
+/* BOTÓN ELIMINAR */
+.panel-controles .btn-peligro {
+    background-color: #c0392b;
+}
+
+.panel-controles .btn-peligro:hover {
+    background-color: #922b21;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .busqueda input {
+        width: 100%;
+    }
+
+    .panel-controles button {
+        flex: 1;
+    }
+}
